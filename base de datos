@@ -1,0 +1,52 @@
+-- Script optimizado para PostgreSQL y DBeaver
+-- Proyecto PNF Informática
+
+CREATE TABLE Departamentos (
+  id_departamento SERIAL NOT NULL,
+  nombre_departamento VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id_departamento)
+);
+
+CREATE TABLE Funcionarios (
+  cedula INT NOT NULL,
+  nombre VARCHAR(50) NOT NULL,
+  apellido VARCHAR(50) NOT NULL,
+  fecha_ingreso DATE NOT NULL,
+  id_departamento INT,
+  contrasena VARCHAR(255) NOT NULL,
+  PRIMARY KEY (cedula),
+  FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento) ON DELETE SET NULL
+);
+
+CREATE TABLE Control_vacaciones (
+  id_control SERIAL NOT NULL,
+  cedula_funcionario INT NOT NULL,
+  anos_servicio INT DEFAULT 0,
+  dias_totales_disponibles INT DEFAULT 0,
+  dias_disfrutados INT NOT NULL DEFAULT 0,
+  dias_restantes INT DEFAULT 0,
+  PRIMARY KEY (id_control),
+  FOREIGN KEY (cedula_funcionario) REFERENCES Funcionarios(cedula) ON DELETE CASCADE
+);
+
+CREATE TABLE peticiones_vacaciones (
+  id_peticion SERIAL NOT NULL,
+  cedula_funcionario INT NOT NULL,
+  fecha_solicitud DATE NOT NULL,
+  fecha_inicio DATE NOT NULL,
+  fecha_fin DATE NOT NULL,
+  estado_peticion VARCHAR(20) NOT NULL DEFAULT 'Pendiente',
+  observaciones TEXT,
+  PRIMARY KEY (id_peticion),
+  FOREIGN KEY (cedula_funcionario) REFERENCES Funcionarios(cedula) ON DELETE CASCADE
+);
+
+CREATE TABLE constancias_emitidas (
+  id_constancia SERIAL NOT NULL,
+  cedula_funcionario INT NOT NULL,
+  fecha_emision TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  motivo VARCHAR(100) NOT NULL,
+  codigo_verificacion VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id_constancia),
+  FOREIGN KEY (cedula_funcionario) REFERENCES Funcionarios(cedula) ON DELETE CASCADE
+);
