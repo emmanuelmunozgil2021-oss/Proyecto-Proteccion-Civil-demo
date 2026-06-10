@@ -1,0 +1,103 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f6f9;
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Container de la Hoja  */
+.constancia-container {
+    background-color: #ffffff;
+    max-width: 750px;
+    margin: 30px auto;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 60px 50px;
+    position: relative;
+}
+
+/* Encabezado Institucional */
+.header-institucional {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+/* Cuerpo del Documento */
+.documento-titulo {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    letter-spacing: 2px;
+}
+
+.cuerpo-texto {
+    text-align: justify;
+    font-size: 16px;
+    text-indent: 45px;
+    margin-bottom: 35px;
+}
+
+/* Bloque de Firmas */
+.bloque-firma {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.linea-firma {
+    border-top: 1px solid #000000;
+    width: 260px;
+    margin: 0 auto 10px auto;
+}
+
+/* Pie de Página de Seguridad */
+.footer-seguridad {
+    border-top: 2px dashed #000000;
+    margin-top: 50px;
+    padding-top: 15px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+}
+
+.btn-print-box {
+    max-width: 750px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.btn-document {
+    padding: 12px 24px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+@media print {
+    body { 
+        background-color: #ffffff; 
+        padding: 0; 
+    }
+    .btn-print-box { 
+        display: none; 
+    }
+    .constancia-container { 
+        border: none; 
+        box-shadow: none; 
+        margin: 0; 
+        padding: 20px 0; 
+    }
+}

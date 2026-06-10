@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Vacaciones - Protección Civil</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-brand">Protección Civil - Simulador</div>
+        <div class="nav-user">
+            <a href="panel.php" class="btn-logout" style="background-color: #1c80d8;">Volver al Panel</a>
+        </div>
+    </header>
+
+    <main class="panel-container">
+        <section class="card">
+            <h3>Conversor de Días de Trabajo a Vacaciones</h3>
+            <hr>
+            <p style="margin-bottom: 20px; color: #6c757d;">
+                Introduce los años de servicio del funcionario para calcular de forma automatizada cuántos días de vacaciones le corresponden según el tiempo de antigüedad acumulado.
+            </p>
+
+            <form id="form-conversor">
+                <div class="input-group">
+                    <label for="anos_servicio">Años de Servicio Activo</label>
+                    <input type="number" id="anos_servicio" min="0" max="50" placeholder="Ej. 5" required>
+                </div>
+
+                <button type="submit" id="btn-calcular" class="btn-submit" style="background-color: #28a745;">
+                    Calcular Días Correspondientes
+                </button>
+            </form>
+
+            <div id="resultado-box" class="balance-item disponible" style="display: none; margin-top: 30px; animation: fadeIn 0.5s ease;">
+                <span class="number" id="txt-dias-calculados">0</span>
+                <span class="label" id="txt-mensaje-resultado">Días Hábiles de Vacaciones</span>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/conversor.js"></script>
+</body>
+</html>

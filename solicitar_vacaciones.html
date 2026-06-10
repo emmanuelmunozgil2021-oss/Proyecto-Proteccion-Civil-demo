@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Vacaciones - Protección Civil</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-brand">Protección Civil - Solicitudes</div>
+        <div class="nav-user">
+            <a href="panel.php" class="btn-logout" style="background-color: #6c757d;">Volver al Panel</a>
+        </div>
+    </header>
+
+    <main class="panel-container">
+        <section class="card">
+            <h3>Formulario de Petición de Vacaciones</h3>
+            <hr>
+            <p style="margin-bottom: 20px; color: #6c757d;">
+                Selecciona la fecha de inicio y finalización de tu periodo vacacional. El sistema verificará automáticamente tu saldo de días disponibles.
+            </p>
+
+            <form action="procesar_vacaciones.php" method="POST" id="form-vacaciones">
+                
+                <div class="input-group">
+                    <label for="fecha_inicio">Fecha de Inicio</label>
+                    <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="fecha_fin">Fecha de Finalización</label>
+                    <input type="date" id="fecha_fin" name="fecha_fin" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="observaciones">Observaciones / Motivo (Opcional)</label>
+                    <textarea id="observaciones" name="observaciones" rows="4" placeholder="Ej. Periodo correspondiente al año contractual 2025..." style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 15px;"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit" style="background-color: #0275d8; margin-top: 10px;">
+                    Enviar Solicitud de Vacaciones
+                </button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

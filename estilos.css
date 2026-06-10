@@ -1,0 +1,242 @@
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Contenedor Principal con Flexbox para Centrado Absoluto */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Caja de Login */
+.login-box {
+    background-color: #ffffff;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    color: #d85002;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Grupos de Entrada (Formulario) */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: border-color 0.2s ease;
+}
+
+/* Efecto Focus en Inputs */
+.input-group input:focus {
+    outline: none;
+    border-color: #0275d8;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #0275d8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0156a0;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #adb5bd;
+}
+
+/* --- ESTILOS PARA EL PANEL DE CONTROL --- */
+
+/* Navbar */
+.navbar {
+    background-color: #d84602;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-logout {
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #c9302c;
+}
+
+/* Contenedor del Panel en Flexbox */
+.panel-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tarjetas Base  */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card hr {
+    border: 0;
+    height: 1px;
+    background: #e9ecef;
+    margin-bottom: 20px;
+}
+
+/* Perfil */
+.profile-card p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Bloques de Balance de Vacaciones */
+.balance-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.balance-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.balance-item.disponible { background-color: #e3f2fd; color: #0d47a1; }
+.balance-item.disfrutado { background-color: #fff3e0; color: #e65100; }
+
+.balance-item .number { font-size: 32px; font-weight: bold; }
+.balance-item .label { font-size: 14px; margin-top: 5px; font-weight: 600; }
+
+
+.actions-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.action-box {
+    flex: 1;
+    min-width: 280px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-box:hover {
+    transform: translateY(-3px);
+    border-color: #0275d8;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.action-box .icon { font-size: 30px; }
+.action-box h4 { color: #0275d8; font-size: 18px; }
+.action-box p { font-size: 14px; color: #6c757d; }
+
+/* Animación para la aparición del resultado */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
